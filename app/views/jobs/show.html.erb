@@ -1,0 +1,39 @@
+<p class="text-green-600"><%= notice %></p>
+
+<div class="border border-gray-300 rounded-lg p-6 shadow-lg max-w-xl mx-auto">
+  <h1 class="text-2xl font-bold mb-4">Job Details</h1>
+  <p>
+    <strong>Company Name:</strong>
+    <span class="text-gray-700"><%= @job.company_name %></span>
+  </p>
+  <p>
+    <strong>Job Title:</strong>
+    <span class="text-gray-700"><%= @job.job_title %></span>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <span class="text-gray-700"><%= @job.job_description %></span>
+  </p>
+  <p>
+    <strong>Location:</strong>
+    <span class="text-gray-700"><%= @job.location %></span>
+  </p>
+  <p>
+    <strong>Job Type:</strong>
+    <span class="text-gray-700"><%= @job.job_type %></span>
+  </p>
+  <p>
+    <strong>Salary:</strong>
+    <span class="text-gray-700"><%= number_to_currency(@job.salary) %></span>
+  </p>
+  <p>
+    <strong>Application Deadline:</strong>
+    <span class="text-gray-700"><%= @job.application_deadline %></span>
+  </p>
+</div>
+
+<div class="mt-6">
+  <%= link_to "Edit this Job", edit_job_path(@job), class: "bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600" %>
+  <%= link_to "Back to Jobs", jobs_path, class: "bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600" %>
+  <%= button_to "Destroy this Job", @job, method: :delete, class: "bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600" %>
+</div>

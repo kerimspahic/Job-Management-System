@@ -1,0 +1,52 @@
+<%= form_with(model: job, local: true, class: "space-y-6") do |form| %>
+  <% if job.errors.any? %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+      <h2 class="font-bold mb-2"><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+      <ul class="list-disc list-inside">
+        <% job.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :company_name, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :company_name, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.label :job_title, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :job_title, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.label :job_description, class: "block font-medium text-gray-700" %>
+    <%= form.text_area :job_description, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.label :location, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :location, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.label :job_type, "Job Type", class: "block font-medium text-gray-700" %>
+    <%= form.select :job_type, options_for_select(Job.job_types.keys.map { |type| [type.humanize, type] }, form.object.job_type), {},
+                    class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.label :salary, class: "block font-medium text-gray-700" %>
+    <%= form.text_field :salary, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.label :application_deadline, class: "block font-medium text-gray-700" %>
+    <%= form.date_field :application_deadline, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save Job", class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" %>
+  </div>
+<% end %>

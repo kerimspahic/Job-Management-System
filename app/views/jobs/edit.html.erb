@@ -1,0 +1,12 @@
+<% content_for :title, "Editing Job" %>
+
+<h1 class="text-2xl font-bold mb-4">Editing Job</h1>
+
+<div class="bg-white shadow rounded-lg p-6">
+  <%= render "form", job: @job %>
+</div>
+
+<div class="mt-6">
+  <%= link_to "Show this Job", @job, class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" %>
+  <%= link_to "Back to Jobs", jobs_path, class: "bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600" %>
+</div>
