@@ -1,0 +1,12 @@
+<tr id="<%= dom_id job %>" class="hover:bg-gray-50">
+  <td class="border border-gray-300 px-4 py-2"><%= job.company_name %></td>
+  <td class="border border-gray-300 px-4 py-2"><%= job.job_title %></td>
+  <td class="border border-gray-300 px-4 py-2"><%= truncate(job.job_description, length: 50) %></td>
+  <td class="border border-gray-300 px-4 py-2"><%= job.location %></td>
+  <td class="border border-gray-300 px-4 py-2"><%= job.job_type.humanize %></td>
+  <td class="border border-gray-300 px-4 py-2"><%= number_to_currency(job.salary) %></td>
+  <td class="border border-gray-300 px-4 py-2"><%= job.application_deadline %></td>
+  <td class="border border-gray-300 px-4 py-2">
+    <%= link_to "Show", job_path(job), class: "text-blue-500 hover:underline" %>
+  </td>
+</tr>
