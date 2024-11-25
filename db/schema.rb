@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_23_215144) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_25_183257) do
+  create_table "access_tokens", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_access_tokens_on_token", unique: true
+    t.index ["user_id"], name: "index_access_tokens_on_user_id"
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "company_name"
     t.string "job_title"
@@ -22,4 +31,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_23_215144) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "otp_secret"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  add_foreign_key "access_tokens", "users"
 end
