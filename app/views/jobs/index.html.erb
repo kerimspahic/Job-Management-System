@@ -8,24 +8,51 @@
   <%= link_to "New Job", new_job_path, class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" %>
 </div>
 
+
+
 <div id="jobs" class="overflow-x-auto">
+<%= form_tag jobs_path, method: "GET", class: "mb-4" do %>
+  <div class="flex gap-4">
+    <%= label_tag :search_by_title, "Job Title" %>
+    <%= text_field_tag :search_by_title, params[:search_by_title], class: "border p-2 rounded" %>
+
+    <%= label_tag :search_by_location, "Location" %>
+    <%= text_field_tag :search_by_location, params[:search_by_location], class: "border p-2 rounded" %>
+
+    <%= label_tag :search_by_type, "Job Type" %>
+    <%= select_tag :search_by_type, options_for_select(Job.job_types.keys.map { |type| [type.titleize, type] }, params[:search_by_type]), prompt: "Select Job Type", class: "border p-2 rounded" %>
+
+    <%= submit_tag "Search", class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" %>
+  </div>
+<% end %>
   <table class="table-auto w-full border-collapse border border-gray-300">
     <thead>
-    <tr class="bg-gray-100">
-      <th class="border border-gray-300 px-4 py-2 text-left">Company Name</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Job Title</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Description</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Location</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Type</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Salary</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Deadline</th>
-      <th class="border border-gray-300 px-4 py-2 text-left">Actions</th>
-    </tr>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2 text-left">Company Name</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Job Title</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Description</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Location</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Type</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Salary</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Deadline</th>
+        <th class="border border-gray-300 px-4 py-2 text-left">Actions</th>
+      </tr>
     </thead>
     <tbody>
-    <% @jobs.each do |job| %>
-      <%= render partial: "job", locals: { job: job } %>
-    <% end %>
+      
+      <% if @jobs.any? %>
+        <% @jobs.each do |job| %>
+          <%= render partial: "job", locals: { job: job } %>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="8" class="text-center py-4">No jobs found</td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
+<div class="mt-6">
+  <%= paginate @jobs %>
 </div>
+</div>
+

@@ -4,6 +4,20 @@ class JobsController < ApplicationController
   # GET /jobs or /jobs.json
   def index
     @jobs = Job.all
+
+    if params[:search_by_title].present?
+      @jobs = @jobs.where("job_title LIKE ?", "%#{params[:search_by_title]}%")
+    end
+
+    if params[:search_by_location].present?
+      @jobs = @jobs.where("location LIKE ?", "%#{params[:search_by_location]}%")
+    end
+
+    if params[:search_by_type].present?
+      @jobs = @jobs.where(job_type: params[:search_by_type])
+    end
+
+    @jobs = @jobs.page(params[:page]).per(5)
   end
 
   # GET /jobs/1 or /jobs/1.json
