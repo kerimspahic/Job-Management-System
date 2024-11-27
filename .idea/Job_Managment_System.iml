@@ -70,6 +70,10 @@
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.13.0, ruby-3.3.6-p108) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v2.8.2, ruby-3.3.6-p108) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kamal (v2.3.0, ruby-3.3.6-p108) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari (v1.2.2, ruby-3.3.6-p108) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-actionview (v1.2.2, ruby-3.3.6-p108) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-activerecord (v1.2.2, ruby-3.3.6-p108) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-core (v1.2.2, ruby-3.3.6-p108) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.3, ruby-3.3.6-p108) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="logger (v1.6.1, ruby-3.3.6-p108) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.23.1, ruby-3.3.6-p108) [gem]" level="application" />
@@ -229,110 +233,111 @@
   </component>
   <component name="RailsPaths" isManagedAutomatically="true">
     <entry key="app">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app</value>
     </entry>
     <entry key="app/assets">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/assets</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/assets</value>
     </entry>
     <entry key="app/channels">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/channels</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/channels</value>
     </entry>
     <entry key="app/controllers">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/controllers</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/controllers</value>
     </entry>
     <entry key="app/helpers">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/helpers</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/helpers</value>
     </entry>
     <entry key="app/mailers">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/mailers</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/mailers</value>
     </entry>
     <entry key="app/models">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/models</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/models</value>
     </entry>
     <entry key="app/views">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\app/views</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\app/views</value>
     </entry>
     <entry key="config">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config</value>
     </entry>
     <entry key="config/cable">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/cable.yml</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/cable.yml</value>
     </entry>
     <entry key="config/cache">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/cache.yml</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/cache.yml</value>
     </entry>
     <entry key="config/database">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/database.yml</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/database.yml</value>
     </entry>
     <entry key="config/environment">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/environment.rb</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/environment.rb</value>
     </entry>
     <entry key="config/environments">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/environments</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/environments</value>
     </entry>
     <entry key="config/initializers">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/initializers</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/initializers</value>
     </entry>
     <entry key="config/locales">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/locales</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/locales</value>
     </entry>
     <entry key="config/routes">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/routes</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/routes</value>
     </entry>
     <entry key="config/routes.rb">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/routes.rb</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/routes.rb</value>
     </entry>
     <entry key="config/solid_cache">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\config/solid_cache.yml</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\config/solid_cache.yml</value>
     </entry>
     <entry key="db">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\db</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\db</value>
     </entry>
     <entry key="db/migrate">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\db/migrate</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\db/migrate</value>
     </entry>
     <entry key="db/seeds.rb">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\db/seeds.rb</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\db/seeds.rb</value>
     </entry>
     <entry key="lib">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\lib</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\lib</value>
     </entry>
     <entry key="lib/assets">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\lib/assets</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\lib/assets</value>
     </entry>
     <entry key="lib/tasks">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\lib/tasks</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\lib/tasks</value>
     </entry>
     <entry key="lib/templates">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\lib/templates</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\lib/templates</value>
     </entry>
     <entry key="log">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\log/development.log</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\log/development.log</value>
     </entry>
     <entry key="public">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\public</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\public</value>
     </entry>
     <entry key="public/javascripts">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\public/javascripts</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\public/javascripts</value>
     </entry>
     <entry key="public/stylesheets">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\public/stylesheets</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\public/stylesheets</value>
     </entry>
     <entry key="test/mailers/previews">
       <value>file://$MODULE_DIR$/test/mailers/previews</value>
-      <value>file://$MODULE_DIR$/../Job_Managment_System\test/mailers/previews</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\test/mailers/previews</value>
     </entry>
     <entry key="tmp">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\tmp</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\tmp</value>
     </entry>
     <entry key="vendor">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\vendor</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\vendor</value>
     </entry>
     <entry key="vendor/assets">
-      <value>file://$MODULE_DIR$/../Job_Managment_System\vendor/assets</value>
+      <value>file://$MODULE_DIR$/../Job-Management-System\vendor/assets</value>
     </entry>
   </component>
-  <component name="RakeTasksCache-v2">
+  <component name="RakeTasksCache-v2" failedReloadsCounter="1">
+    <option name="failedReloadsCounter" value="1" />
     <option name="myRootTask">
       <RakeTaskImpl id="rake">
         <subtasks>

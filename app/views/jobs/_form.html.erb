@@ -1,8 +1,11 @@
 <%= form_with(model: job, local: true, class: "space-y-6") do |form| %>
+  <!-- Error Messages -->
   <% if job.errors.any? %>
-    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
-      <h2 class="font-bold mb-2"><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
-      <ul class="list-disc list-inside">
+    <div class="bg-red-50 border border-red-400 text-red-700 px-4 py-3 rounded-md">
+      <h2 class="font-bold text-sm mb-2">
+        <%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:
+      </h2>
+      <ul class="list-disc list-inside text-sm">
         <% job.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -10,43 +13,62 @@
     </div>
   <% end %>
 
+  <!-- Company Name -->
   <div>
-    <%= form.label :company_name, class: "block font-medium text-gray-700" %>
-    <%= form.text_field :company_name, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :company_name, "Company Name", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :company_name,
+                        class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
   </div>
 
+  <!-- Job Title -->
   <div>
-    <%= form.label :job_title, class: "block font-medium text-gray-700" %>
-    <%= form.text_field :job_title, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :job_title, "Job Title", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :job_title,
+                        class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
   </div>
 
+  <!-- Job Description -->
   <div>
-    <%= form.label :job_description, class: "block font-medium text-gray-700" %>
-    <%= form.text_area :job_description, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :job_description, "Job Description", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :job_description,
+                       rows: 5,
+                       class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
   </div>
 
+  <!-- Location -->
   <div>
-    <%= form.label :location, class: "block font-medium text-gray-700" %>
-    <%= form.text_field :location, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :location, "Location", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :location,
+                        class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
   </div>
 
+  <!-- Job Type -->
   <div>
-    <%= form.label :job_type, "Job Type", class: "block font-medium text-gray-700" %>
-    <%= form.select :job_type, options_for_select(Job.job_types.keys.map { |type| [type.humanize, type] }, form.object.job_type), {},
-                    class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :job_type, "Job Type", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.select :job_type,
+                    options_for_select(Job.job_types.keys.map { |type| [type.humanize, type] }, form.object.job_type),
+                    {},
+                    class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
   </div>
 
+  <!-- Salary -->
   <div>
-    <%= form.label :salary, class: "block font-medium text-gray-700" %>
-    <%= form.text_field :salary, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :salary, "Salary", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :salary,
+                        placeholder: "e.g., 50,000/year",
+                        class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
   </div>
 
+  <!-- Application Deadline -->
   <div>
-    <%= form.label :application_deadline, class: "block font-medium text-gray-700" %>
-    <%= form.date_field :application_deadline, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+    <%= form.label :application_deadline, "Application Deadline", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.date_field :application_deadline, min: Date.today.to_s, class: "mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+
   </div>
 
+  <!-- Submit Button -->
   <div>
-    <%= form.submit "Save Job", class: "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" %>
+    <%= form.submit "Save Job",
+                    class: "w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
   </div>
 <% end %>

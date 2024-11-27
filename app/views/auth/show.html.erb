@@ -1,26 +1,25 @@
-<div class="max-w-lg mx-auto p-6 bg-white shadow rounded-lg space-y-6">
+<div class="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+
   <div class="space-y-2">
     <h2 class="text-2xl font-bold text-gray-900">Let's Get Started</h2>
-    <p class="text-gray-700">
-      Enter your email. 
-      A verification code will be sent to your address.
+    <p class="text-sm text-gray-700 leading-relaxed">
+      Enter your email below. A verification code will be sent to your address.
     </p>
   </div>
-  
+
   <div>
-    <%= form_with(url: auth_path, class: "space-y-4") do |f| %>
+    <%= form_with(url: auth_path, html: { class: "space-y-4" }) do |f| %>
       <div>
-        <%= f.email_field :email, value: params[:email], 
-            placeholder: "Email address", required: true, 
-            class: "w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
+        <%= f.label :email, "Email Address", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.email_field :email, value: params[:email], placeholder: "you@example.com", required: true, class: "mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
       </div>
-      
       <div>
-        <button name="button" type="submit" 
-            class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-          Send Code
+        <button name="button" type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          Send Verification Code
         </button>
       </div>
     <% end %>
   </div>
+
 </div>
